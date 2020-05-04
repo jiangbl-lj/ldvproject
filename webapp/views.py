@@ -18,6 +18,4 @@ def test(request):
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=300)
-        return JsonResponse(serializer.data,status=400)
-
-
+        return JsonResponse(serializer.data, status=500)
