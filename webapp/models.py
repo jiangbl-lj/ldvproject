@@ -11,4 +11,6 @@ class Test(models.Model):
         ordering=('create',)
 
 
-
+class User(models.Model):
+    url = models.CharField(max_length=100)
+    username_login = models.CharField(max_length=200)

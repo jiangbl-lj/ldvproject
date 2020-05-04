@@ -6,3 +6,8 @@ class Testserializers(serializers.ModelSerializer):
         model=Test
         fields=('id','username','password')
 
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ['url', 'username', 'email', 'is_staff']
