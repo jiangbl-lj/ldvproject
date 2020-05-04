@@ -17,7 +17,7 @@ def test(request):
         serializer=Testserializers(data=data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=401)
+            return JsonResponse(serializer.data, status=300)
         return JsonResponse(serializer.data,status=400)
 
 
