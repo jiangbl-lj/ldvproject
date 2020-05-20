@@ -1,16 +1,28 @@
 from django.db import models
 
 # Create your models here.
-class Test(models.Model):
+class User(models.Model):
     create=models.DateTimeField(auto_now_add=True)
-    username=models.CharField(max_length=100,default='ls')
-    password=models.CharField(max_length=100,default='tool')
+    username=models.CharField(max_length=100)
+    password=models.CharField(max_length=10,default='123456')
+    add_by_uaer=models.CharField(max_length=100)
 
 
     class Meta:
-        ordering=('create',)
+        db_table='user'
+        verbose_name='用户信息表'
 
 
-class User(models.Model):
-    url = models.CharField(max_length=100)
-    username_login = models.CharField(max_length=200)
+class Getapilist(models.Model):
+    apiurl=models.URLField(verbose_name=None)
+    apiname=models.CharField(max_length=100)
+    apimethod=models.CharField(choices=('POST','GET'))
+
+
+
+
+
+
+
+
+
