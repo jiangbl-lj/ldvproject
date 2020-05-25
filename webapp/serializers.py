@@ -1,13 +1,21 @@
 from rest_framework import serializers
-from webapp.models import Test
+from webapp.models import User,Apilist,Apiparater
 
-class Testserializers(serializers.ModelSerializer):
+class Userserializers(serializers.ModelSerializer):
     class Meta:
-        model=Test
+        model=User
         fields=('id','username','password')
 
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class Apilistserializers(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+        model=Apilist
+        fields=('urlid','urlname','apiurl')
+
+class Apiparaterserializers(serializers.ModelSerializer):
+    model=Apiparater
+    fields=('paraters','bodydata','urlid')
+
+
+
+
+
